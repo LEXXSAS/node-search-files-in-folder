@@ -7,6 +7,14 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+const s1 = async() => {
+  readline
+.createInterface(process.stdin, process.stdout)
+.question("Нажмите [Enter] чтобы выйти...", function(){
+    process.exit();
+})
+}
+
 (function filesOnDir() {
   const homedir = os.homedir();
   const pathToDir = `${homedir}/Downloads`;
@@ -30,6 +38,9 @@ const rl = readline.createInterface({
       if (searchWord.length > 0) {
         const ourWord =  getWord(searchWord, allFiles);
         console.log(ourWord)
+        setTimeout(() => {
+          s1()
+        }, 0)
       } else {
         console.log('вы ничего не ввели...')
       }
@@ -41,5 +52,3 @@ const rl = readline.createInterface({
     console.log('путь не корректен')
   }
 })();
-
-// filesOnDir()
