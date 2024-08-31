@@ -5,3 +5,4 @@ Search files in a folder by name from cmd promt
 
 > [!NOTE]
 > For start project run command "node /readFile.js"
+> next then enter a word to search for files
