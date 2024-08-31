@@ -9,10 +9,10 @@ const rl = readline.createInterface({
 
 const s1 = async() => {
   readline
-.createInterface(process.stdin, process.stdout)
-.question("Нажмите [Enter] чтобы выйти...", function(){
-    process.exit();
-})
+  .createInterface(process.stdin, process.stdout)
+  .question("Нажмите [Enter] чтобы выйти...", function(){
+      process.exit();
+  })
 }
 
 (function filesOnDir() {
