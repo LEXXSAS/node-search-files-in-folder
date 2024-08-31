@@ -37,7 +37,7 @@ const s1 = async() => {
     rl.question('Введите слово для поиска файла: ', (searchWord) => {
       if (searchWord.length > 0) {
         const ourWord =  getWord(searchWord, allFiles);
-        console.log(ourWord)
+        console.log(ourWord.join('\n'))
         setTimeout(() => {
           s1()
         }, 0)
