@@ -1,0 +1,9 @@
+npm install -g pkg
+pkg readFile.js
+
+нужна версия node 18
+
+тут установщик pkg
+https://www.npmjs.com/package/pkg
+тут установщик yarn
+https://classic.yarnpkg.com/en/docs/install#windows-stable
