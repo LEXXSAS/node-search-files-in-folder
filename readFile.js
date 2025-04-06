@@ -1,6 +1,5 @@
 const fs = require('fs');
 const readline = require('node:readline');
-let os = require('os')
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -16,17 +15,14 @@ const s1 = async() => {
 }
 
 (function filesOnDir() {
-  const homedir = os.homedir();
-  const pathToDir = `${homedir}/Downloads`;
+  const currentPath = process.cwd();
+  const pathToDir = currentPath;
   function dirExist(p) {
     return fs.existsSync(pathToDir)
   }
 
   if (dirExist()) {
     const allFiles = fs.readdirSync(pathToDir);
-    // let filesArr = [];
-    // allFiles.forEach((file, id) => filesArr.push({id, file}))
-  
     function getWord(word, a1) {
       return a1.filter(s => {
         const regex = new RegExp(word, 'gi');
@@ -37,6 +33,9 @@ const s1 = async() => {
     rl.question('Введите слово для поиска файла: ', (searchWord) => {
       if (searchWord.length > 0) {
         const ourWord =  getWord(searchWord, allFiles);
+        if (ourWord.length === 0) {
+          console.log('Ничего не найдено')
+        }
         console.log(ourWord.join('\n'))
         setTimeout(() => {
           s1()
